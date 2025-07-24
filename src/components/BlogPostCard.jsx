@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../assets/davtek-logo.png";
 
 function BlogPostCard({ post }) {
-  // A helper function to format the Firestore Timestamp
   const formatDate = (timestamp) => {
     if (!timestamp) return "";
     return new Date(timestamp.seconds * 1000).toLocaleDateString("en-US", {
@@ -17,7 +16,7 @@ function BlogPostCard({ post }) {
       <div className="bg-white rounded-lg shadow-lg overflow-hidden h-full transform transition duration-500 ease-in-out hover:-translate-y-2 hover:shadow-2xl">
         <img
           className="w-full h-56 object-cover"
-          src={post.imageUrl || "https://via.placeholder.com/400x300"}
+          src={post.imageUrl || Logo}
           alt={post.title}
         />
         <div className="p-6">
