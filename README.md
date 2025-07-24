@@ -6,11 +6,15 @@ A very simple page that talks about all things Tech! The site has not launched y
 
 The visitor is first welcomed at the home screen which shows all the cards of the blog posts. At this time, the image is a placeholder with a Davtek logo. This will change to a dynamic image which is currently being worked on.
 
+
 <img width="802" height="413" alt="1" src="https://github.com/user-attachments/assets/c1a1fa1e-98e2-4194-acef-83e8b43c7afe" />
+
 
 After that, the visitor can click on any of the card, in which they are taken to a page that loads the entire blog post. 
 
+
 <img width="757" height="413" alt="2" src="https://github.com/user-attachments/assets/7915a0a3-27b5-4877-8543-9c535ed81bdf" />
+
 
 ## How the Blog Posts Are Created
 
