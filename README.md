@@ -2,7 +2,7 @@
 
 A very simple page that talks about all things Tech! The site has not launched yet and is still currently being built.
 
-## Howw it works
+## How it works
 
 The visitor is first welcomed at the home screen which shows all the cards of the blog posts. At this time, the image is a placeholder with a Davtek logo. This will change to a dynamic image which is currently being worked on.
 
