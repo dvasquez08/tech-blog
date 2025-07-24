@@ -1,46 +1,76 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Showdown from "showdown";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
-import ReactMarkdown from "react-markdown";
+import Logo from "../assets/davtek-logo.png";
 
 function PostPage() {
-  const { postId } = useParams;
+  const { postID } = useParams();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const converter = new Showdown.Converter();
+
   useEffect(() => {
-    const fetchPosts = async () => {
-      const docRef = doc(db, "posts", postId);
+    const fetchPost = async () => {
+      if (!postID) return;
+      setLoading(true);
+      const docRef = doc(db, "posts", postID);
       const docSnap = await getDoc(docRef);
 
       if (docSnap.exists()) {
-        setPost(docSnap.data());
+        setPost({ id: docSnap.id, ...docSnap.data() });
       } else {
-        console.log("No such document");
+        console.log("No such document!");
+        setPost(null);
       }
       setLoading(false);
     };
-    fetchPosts();
-  }, [postId]);
+
+    fetchPost();
+  }, [postID]);
+
+  const formatDate = (timestamp) => {
+    if (!timestamp) return "";
+    return new Date(timestamp.seconds * 1000).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
 
   if (loading) {
-    return <p className="text-center text-lg">loading post...</p>;
+    return <p className="text-center text-lg mt-8">Loading post...</p>;
   }
 
+  if (!post) {
+    return <p className="text-center text-lg mt-8">Post not found.</p>;
+  }
+
+  const contentHtml = converter.makeHtml(post.content);
+
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 lg:p-10">
-      <h1 className="text-3xl md:text-5xl front-bold mb-4">{post.title}</h1>
+    <article className="bg-white rounded-lg shadow-xl max-w-4xl mx-auto overflow-hidden">
       <img
-        src={post.image}
-        Url
+        className="w-full h-96 object-cover"
+        src={post.imageUrl || Logo}
         alt={post.title}
-        className="w-full h-auto object-cover rounded-md my-6"
       />
-      <article className="prose lg:prose-xl max-w-none">
-        <ReactMarkdown>{post.content}</ReactMarkdown>
-      </article>
-    </div>
+      <div className="p-8 md:p-12">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+          {post.title}
+        </h1>
+        <p className="text-gray-500 text-md mb-8">
+          Published on {formatDate(post.createdAt)}
+        </p>
+
+        <div
+          className="prose prose-lg max-w-none text-gray-800"
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
+        />
+      </div>
+    </article>
   );
 }
 
