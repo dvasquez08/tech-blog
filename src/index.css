@@ -4,3 +4,8 @@
   --color-brand-primary: #4CC9F0; 
   --color-brand-secondary: #F72585; 
 }
+
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
