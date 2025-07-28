@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import Logo from "../assets/logo-1.png";
 import { Link } from "react-router-dom";
 
 function Nav() {
@@ -21,10 +22,13 @@ function Nav() {
             : "bg-gray-800 shadow"
         }`}
       >
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-6 py-4 flex flex-wrap">
+          <a className="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src={Logo} className="h-8" />
+          </a>
           <Link
             to="/"
-            className="text-3xl font-mono font-bold text-green-500 hover:text-white transition-colors duration-300"
+            className="text-3xl font-sans font-medium text-gray-300 hover:text-white transition-colors duration-300"
           >
             Tech Things HQ
           </Link>

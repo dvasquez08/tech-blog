@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Showdown from "showdown";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
-import Logo from "../assets/davtek-logo.png";
+import Logo from "../assets/logo-2.png";
 
 function PostPage() {
   const { postID } = useParams();

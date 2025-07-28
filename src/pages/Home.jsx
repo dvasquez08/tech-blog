@@ -30,12 +30,12 @@ function Home() {
   return (
     <>
       <Hero />
-      <div className="container mx-auto text-center flex flex-col items-center justify-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-mono font-light mb-6 text-green-500">
+      <div className="container mx-auto text-center flex flex-col items-center justify-center mt-36">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-medium mb-6 text-gray-300">
           Blog:
         </h1>
-        <p className="text-xl text-white max-w-3xl mx-auto mb-12">
-          Checkout our daily blog posts:
+        <p className="text-xl text-white max-w-3xl mx-auto mb-36">
+          Stay sharp with our latest posts on tech, tools, and trends.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
