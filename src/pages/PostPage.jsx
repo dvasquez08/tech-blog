@@ -41,32 +41,36 @@ function PostPage() {
   };
 
   if (loading) {
-    return <p className="text-center text-lg mt-8">Loading post...</p>;
+    return (
+      <p className="text-center text-lg mt-8 text-gray-400">Loading post...</p>
+    );
   }
 
   if (!post) {
-    return <p className="text-center text-lg mt-8">Post not found.</p>;
+    return (
+      <p className="text-center text-lg mt-8 text-gray-400">Post not found.</p>
+    );
   }
 
   const contentHtml = converter.makeHtml(post.content);
 
   return (
-    <article className="bg-white rounded-lg shadow-xl max-w-4xl mx-auto overflow-hidden">
+    <article className="bg-gray-600 rounded-lg shadow-xl max-w-4xl mx-auto overflow-hidden">
       <img
         className="w-full h-96 object-cover"
         src={post.imageUrl || Logo}
         alt={post.title}
       />
       <div className="p-8 md:p-12">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-200 mb-4">
           {post.title}
         </h1>
-        <p className="text-gray-500 text-md mb-8">
+        <p className="text-gray-300 text-md mb-8">
           Published on {formatDate(post.createdAt)}
         </p>
 
         <div
-          className="prose prose-lg max-w-none text-gray-800"
+          className="prose prose-lg max-w-none text-gray-200"
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
       </div>
