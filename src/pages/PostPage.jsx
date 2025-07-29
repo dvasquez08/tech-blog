@@ -4,6 +4,7 @@ import Showdown from "showdown";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import Logo from "../assets/logo-2.png";
+import EzoicAd from "../components/EzoicAd";
 
 function PostPage() {
   const { postID } = useParams();
@@ -55,26 +56,40 @@ function PostPage() {
   const contentHtml = converter.makeHtml(post.content);
 
   return (
-    <article className="bg-gray-600 rounded-lg shadow-xl max-w-4xl mx-auto overflow-hidden">
-      <img
-        className="w-full h-96 object-cover"
-        src={post.imageUrl || Logo}
-        alt={post.title}
-      />
-      <div className="p-8 md:p-12">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-200 mb-4">
-          {post.title}
-        </h1>
-        <p className="text-gray-300 text-md mb-8">
-          Published on {formatDate(post.createdAt)}
-        </p>
-
-        <div
-          className="prose prose-lg max-w-none text-gray-200"
-          dangerouslySetInnerHTML={{ __html: contentHtml }}
+    <>
+      <article className="bg-gray-600 rounded-lg shadow-xl max-w-4xl mx-auto overflow-hidden">
+        <img
+          className="w-full h-96 object-cover"
+          src={post.imageUrl || Logo}
+          alt={post.title}
         />
-      </div>
-    </article>
+        <div className="p-8 md:p-12">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-200 mb-4">
+            {post.title}
+          </h1>
+          <p className="text-gray-300 text-md mb-8">
+            Published on {formatDate(post.createdAt)}
+          </p>
+          <div className="my-8">
+            <EzoicAd placeholderId={102} />
+          </div>
+          <div
+            className="prose prose-lg max-w-none text-gray-200"
+            dangerouslySetInnerHTML={{ __html: contentHtml }}
+          />
+        </div>
+      </article>
+      <aside className="md:col-span-1">
+        <div className="sticky top-24 space-y-8">
+          <h3 className="text-lg font-bold text-gray-300 border-b border-gray-500 pb-2">
+            Advertisement
+          </h3>
+          <EzoicAd placeholderId={104} /> {/* sidebar */}
+          <EzoicAd placeholderId={105} /> {/* sidebar_middle */}
+          <EzoicAd placeholderId={106} /> {/* sidebar_bottom */}
+        </div>
+      </aside>
+    </>
   );
 }
 
