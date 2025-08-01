@@ -2,7 +2,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-800 text-gray-400 py-8 mt-16">
+    <footer className="bg-linear-to-t from-gray-700 to-gray-800 text-gray-400 py-8 mt-16">
       <div className="container mx-auto px-6 text-center">
         <p>&copy; {currentYear} Tech Things HQ. All Rights Reserved.</p>
       </div>
