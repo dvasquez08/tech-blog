@@ -11,7 +11,7 @@ function App() {
     <>
       <BrowserRouter>
         <EzoicPageviewTracker />
-        <div className="bg-slate-700 min-h-screen flex flex-col">
+        <div className="bg-linear-to-r from-sky-800 to-slate-800 min-h-screen flex flex-col">
           <Nav />
           <main className="container mx-auto px-4 py-8 flex-grow">
             <EzoicAd placeholderId={101} />
