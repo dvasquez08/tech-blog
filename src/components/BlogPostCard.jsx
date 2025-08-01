@@ -13,7 +13,7 @@ function BlogPostCard({ post }) {
 
   return (
     <Link to={`/post/${post.id}`} className="block group">
-      <div className="bg-slate-700/70 rounded-lg shadow-lg overflow-hidden h-full transform transition duration-500 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover:shadow-[0_0_20px_#FFFFFF] duration-300">
+      <div className="bg-slate-700/70 rounded-lg shadow-lg overflow-hidden h-full transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-[0_0_20px_#FFFFFF]">
         <img
           className="w-full h-56 object-cover"
           src={post.imageUrl || Logo}

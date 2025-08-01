@@ -24,7 +24,9 @@ function Home() {
   }, []);
 
   if (loading) {
-    return <p className="text-center text-lg">Loading posts...</p>;
+    return (
+      <p className="text-center text-lg text-gray-500">Loading posts...</p>
+    );
   }
 
   return (
