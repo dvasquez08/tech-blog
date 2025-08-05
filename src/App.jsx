@@ -5,6 +5,9 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import EzoicPageviewTracker from "./components/EzoicPageviewTracker";
 import EzoicAd from "./components/EzoicAd";
+import About from "./pages/About";
+import Privacy from "./pages/Privacy";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
             <Routes>
               <Route index element={<Home />} />
               <Route path="/post/:postID" element={<PostPage />} />
+              <Route path="/About" element={<About />} />
+              <Route path="/Privacy" element={<Privacy />} />
+              <Route path="/Contact" element={<Contact />} />
             </Routes>
           </main>
           <Footer />
