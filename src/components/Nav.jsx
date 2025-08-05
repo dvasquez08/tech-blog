@@ -22,16 +22,38 @@ function Nav() {
             : "bg-gray-800 shadow"
         }`}
       >
-        <div className="container mx-auto px-6 py-4 flex flex-wrap">
-          <a className="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src={Logo} className="h-8" />
-          </a>
-          <Link
-            to="/"
-            className="text-3xl font-sans font-medium text-gray-300 hover:text-white transition-colors duration-300"
-          >
-            Tech Things HQ
-          </Link>
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <div className="flex flex-wrap">
+            <a className="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src={Logo} className="h-8" />
+            </a>
+            <Link
+              to="/"
+              className="text-3xl font-sans font-medium text-gray-300 hover:text-white transition-colors duration-300"
+            >
+              Tech Things HQ
+            </Link>
+          </div>
+
+          {/* Desktop Menu Begins Here */}
+          <ul className="hidden md:flex items-center space-x-6">
+            <li>
+              <Link to="/About" className="text-white hover:text-blue-400">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/Privacy" className="text-white hover:text-blue-400">
+                Privacy
+              </Link>
+            </li>
+            <li>
+              <Link to="/Contact" className="text-white hover:text-blue-400">
+                Contact
+              </Link>
+            </li>
+          </ul>
+          <p className="text-white">Place Search Bar here</p>
         </div>
       </nav>
     </>
