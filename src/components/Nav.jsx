@@ -136,7 +136,7 @@ function Nav() {
                 <Link
                   to="/"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 px-3 text-white rounded md:bg-transparent md:p-0 hover:text-blue-400"
+                  className="block py-2 px-3 text-white rounded md:bg-transparent md:p-0 hover:text-blue-600"
                 >
                   Home
                 </Link>
@@ -145,7 +145,7 @@ function Nav() {
                 <Link
                   to="/about"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 px-3 text-white rounded md:bg-transparent md:p-0 hover:text-blue-400"
+                  className="block py-2 px-3 text-white rounded md:bg-transparent md:p-0 hover:text-blue-600"
                 >
                   About
                 </Link>
@@ -154,7 +154,7 @@ function Nav() {
                 <Link
                   to="/contact"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 px-3 text-white rounded md:bg-transparent md:p-0 hover:text-blue-400"
+                  className="block py-2 px-3 text-white rounded md:bg-transparent md:p-0 hover:text-blue-600"
                 >
                   Contact
                 </Link>
