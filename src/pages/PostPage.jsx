@@ -4,7 +4,6 @@ import Showdown from "showdown";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import Logo from "../assets/logo-2.png";
-import EzoicAd from "../components/EzoicAd";
 
 function PostPage() {
   const { postID } = useParams();
@@ -79,16 +78,6 @@ function PostPage() {
           />
         </div>
       </article>
-      <aside className="md:col-span-1">
-        <div className="sticky top-24 space-y-8">
-          <h3 className="text-lg font-bold text-gray-300 border-b border-gray-500 pb-2">
-            Advertisement
-          </h3>
-          <EzoicAd placeholderId={104} /> {/* sidebar */}
-          <EzoicAd placeholderId={105} /> {/* sidebar_middle */}
-          <EzoicAd placeholderId={106} /> {/* sidebar_bottom */}
-        </div>
-      </aside>
     </>
   );
 }
