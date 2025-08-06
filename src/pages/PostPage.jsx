@@ -69,9 +69,7 @@ function PostPage() {
           <p className="text-gray-300 text-md mb-8">
             Published on {formatDate(post.createdAt)}
           </p>
-          <div className="my-8">
-            <EzoicAd placeholderId={102} />
-          </div>
+          <div className="my-8"></div>
           <div
             className="prose prose-lg max-w-none text-gray-200"
             dangerouslySetInnerHTML={{ __html: contentHtml }}

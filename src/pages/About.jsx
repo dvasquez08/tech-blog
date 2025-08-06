@@ -1,7 +1,7 @@
 function About() {
   return (
     <div className="bg-gray-600 rounded-lg shadow-xl max-w-4xl mx-auto p-8 md:p-12">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-gray-200 mb-6">
+      <h1 className="text-4xl md:text-5xl font-sans font-medium text-gray-200 mb-6">
         About Tech Things HQ
       </h1>
       <div className="prose prose-lg max-w-none text-gray-200">
