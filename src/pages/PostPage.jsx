@@ -63,7 +63,7 @@ function PostPage() {
           alt={post.title}
         />
         <div className="p-8 md:p-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-200 mb-4">
+          <h1 className="text-4xl md:text-5xl font-sans font-medium text-gray-200 mb-4">
             {post.title}
           </h1>
           <p className="text-gray-300 text-md mb-8">
