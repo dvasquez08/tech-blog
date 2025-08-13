@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/logo-2.png";
+import Logo from "../assets/logo-1.png";
 
 // ----- This is a reusable component that displays a summary of a blog post and links to the full article. -----
 

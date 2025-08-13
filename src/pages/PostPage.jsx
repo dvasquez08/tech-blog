@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Showdown from "showdown";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
-import Logo from "../assets/logo-2.png";
+import Logo from "../assets/logo-1.png";
 
 // ----- This component displays the full content of a single blog post, identified by its ID -----
 
