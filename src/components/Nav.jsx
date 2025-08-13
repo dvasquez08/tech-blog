@@ -4,7 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../firebase";
 
+// ----- The Navbar that handles the sites navigation, including a dynamic search bar that provides live results -----
+
 function Nav() {
+  // State for UI behavior and search functionality.
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [allPosts, setAllPosts] = useState([]);
@@ -14,12 +17,14 @@ function Nav() {
   const searchContainerRef = useRef(null);
   const navigate = useNavigate();
 
+  // Effect to change nav background on scroll.
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 0);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Effect to fetch all posts once for the search functionality.
   useEffect(() => {
     const fetchPosts = async () => {
       const postCollection = collection(db, "posts");
@@ -34,6 +39,7 @@ function Nav() {
     fetchPosts();
   }, []);
 
+  // Effect to filter posts based on the search term.
   useEffect(() => {
     if (searchTerm.trim() === "") {
       setFilteredPosts([]);
@@ -45,6 +51,7 @@ function Nav() {
     setFilteredPosts(filtered);
   }, [searchTerm, allPosts]);
 
+  // Effect to handle clicks outside the search results to close them.
   useEffect(() => {
     function handleClickOutside(event) {
       if (
@@ -58,10 +65,11 @@ function Nav() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [searchContainerRef]);
 
+  // Function to handle navigation when a search result is clicked.
   const handleResultClick = (postId) => {
     setSearchTerm("");
     setIsSearchFocused(false);
-    setIsMenuOpen(false);
+    setIsMenuOpen(false); // Close mobile menu if open
     navigate(`/post/${postId}`);
   };
 
@@ -84,6 +92,7 @@ function Nav() {
           </span>
         </Link>
 
+        {/* Mobile menu button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           type="button"
@@ -92,6 +101,8 @@ function Nav() {
           aria-expanded={isMenuOpen}
         >
           <span className="sr-only">Open main menu</span>
+
+          {/* Hamburger and Close icons */}
           <svg
             className={`w-5 h-5 ${isMenuOpen ? "hidden" : "block"}`}
             aria-hidden="true"
@@ -124,6 +135,7 @@ function Nav() {
           </svg>
         </button>
 
+        {/* Navigation links and search bar container */}
         <div
           className={`w-full md:block md:w-auto ${
             isMenuOpen ? "block" : "hidden"
@@ -132,6 +144,7 @@ function Nav() {
         >
           <div className="flex flex-col items-center p-4 md:p-0 mt-4 font-medium border border-gray-700 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0">
             <ul className="flex flex-col p-4 md:p-0 mt-4 md:mt-0 space-y-8 md:flex-row md:space-y-0 md:space-x-8">
+              {/* Navigation links */}
               <li>
                 <Link
                   to="/"
@@ -161,6 +174,7 @@ function Nav() {
               </li>
             </ul>
 
+            {/* Search bar and results dropdown */}
             <div
               className="relative w-full md:w-64 mt-4 md:mt-0"
               ref={searchContainerRef}
@@ -173,6 +187,7 @@ function Nav() {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onFocus={() => setIsSearchFocused(true)}
               />
+              {/* Conditionally render search results */}
               {isSearchFocused && searchTerm && (
                 <div className="absolute mt-2 w-full bg-slate-800 rounded-lg shadow-xl overflow-hidden max-h-80 overflow-y-auto">
                   {filteredPosts.length > 0 ? (

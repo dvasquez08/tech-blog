@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo-2.png";
 
+// ----- This is a reusable component that displays a summary of a blog post and links to the full article. -----
+
+// Receives a 'post' object as a prop.
 function BlogPostCard({ post }) {
+  // Helper function to format the post's creation date.
   const formatDate = (timestamp) => {
     if (!timestamp) return "";
     return new Date(timestamp.seconds * 1000).toLocaleDateString("en-US", {
@@ -12,6 +16,7 @@ function BlogPostCard({ post }) {
   };
 
   return (
+    // Link component from React Router DOM to navigate to the specific post page.
     <Link to={`/post/${post.id}`} className="block group">
       <div className="bg-slate-700/70 rounded-lg shadow-lg overflow-hidden h-full transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-[0_0_20px_#FFFFFF]">
         <img
