@@ -10,10 +10,7 @@ function Footer() {
           <Link to="/about" className="hover:text-white transition-colors pr-4">
             About
           </Link>
-          <Link
-            to="/privacy-policy"
-            className="hover:text-white transition-colors"
-          >
+          <Link to="/privacy" className="hover:text-white transition-colors">
             Privacy Policy
           </Link>
           <Link
