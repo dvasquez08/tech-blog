@@ -97,11 +97,37 @@ function Home() {
       </Helmet>
 
       <Hero />
+
+      {/* Introductory paragraph, stating what the website is all about */}
+      <div className="container mx-auto mt-12 mb-24 max-w-4xl text-center">
+        <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-200">
+          Welcome to Tech Things HQ
+        </h2>
+        <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+          Tech Things HQ is your hub for the latest insights on technology,
+          automation, and artificial intelligence. This site was created to make
+          sense of the fast-changing tech landscape and provide practical
+          knowledge that anyone can apply, whether you’re a developer,
+          entrepreneur, or simply curious about the future of digital tools.
+        </p>
+        <p className="text-lg md:text-xl text-gray-300 leading-relaxed mt-6">
+          Here, you’ll find articles covering breakthroughs in AI, hands-on tips
+          for software development, and guides to tools that make life and work
+          more efficient. Every post is built on research and experimentation,
+          with the goal of helping readers stay informed and ahead of the curve.
+        </p>
+        <p className="text-lg md:text-xl text-gray-300 leading-relaxed mt-6">
+          Thanks for visiting, dive into our latest posts below and join the
+          journey as we explore the technologies shaping tomorrow.
+        </p>
+      </div>
+
+      {/* The Blog title before all the blog posts are listed */}
       <div className="container mx-auto text-center flex flex-col items-center justify-center mt-36">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-medium mb-6 text-gray-300">
+        <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-200">
           Blog:
-        </h1>
-        <p className="text-xl text-white max-w-3xl mx-auto mb-36">
+        </h2>
+        <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-36">
           Stay sharp with our latest posts on tech, tools, and trends.
         </p>
       </div>
