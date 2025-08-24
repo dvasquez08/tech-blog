@@ -3,6 +3,7 @@ import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../firebase";
 import BlogPostCard from "../components/BlogPostCard";
 import Hero from "../components/Hero";
+import { Helmet } from "react-helmet-async";
 
 // ----- This component serves as the main landing page, fetching and displaying a list of all blog posts. -----
 
@@ -37,8 +38,64 @@ function Home() {
     );
   }
 
+  // Structured data for homepage as a Blog
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    headline: "Tech Blog",
+    description:
+      "Stay sharp with our latest posts on AI, automation, and technology trends.",
+    url: "https://techthingshq.com/",
+    publisher: {
+      "@type": "Davtek",
+      name: "David Vasquez",
+    },
+  };
+
   return (
     <>
+      <Helmet>
+        <title>Tech Blog | Latest Posts</title>
+        <meta
+          name="description"
+          content="Stay sharp with our latest posts on AI, automation, and technology trends."
+        />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Tech Blog | Latest Posts" />
+        <meta
+          property="og:description"
+          content="Read the latest articles on AI, automation, and technology trends."
+        />
+        <meta
+          property="og:image"
+          content="https://techthingshq.com/og-default.jpg"
+        />
+        <meta property="og:url" content="https://techthingshq.com/" />
+        <meta property="og:site_name" content="Tech Blog" />
+
+        {/* Twitter/X */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Tech Blog | Latest Posts" />
+        <meta
+          name="twitter:description"
+          content="Fresh insights on AI, automation, and modern tech."
+        />
+        <meta
+          name="twitter:image"
+          content="https://techthingshq.com/og-default.jpg"
+        />
+
+        {/* Canonical */}
+        <link rel="canonical" href="https://techthingshq.com/" />
+
+        {/* JSON-LD */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
+
       <Hero />
       <div className="container mx-auto text-center flex flex-col items-center justify-center mt-36">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-medium mb-6 text-gray-300">
