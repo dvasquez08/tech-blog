@@ -14,7 +14,7 @@ function Footer() {
             Privacy Policy
           </Link>
           <Link
-            to="/contact"
+            to="/disclaimer"
             className="hover:text-white transition-colors pl-4"
           >
             Disclaimer
