@@ -17,6 +17,12 @@ function Footer() {
             to="/contact"
             className="hover:text-white transition-colors pl-4"
           >
+            Disclaimer
+          </Link>
+          <Link
+            to="/contact"
+            className="hover:text-white transition-colors pl-4"
+          >
             Contact
           </Link>
         </div>
