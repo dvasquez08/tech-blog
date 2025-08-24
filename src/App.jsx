@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
 import Contact from "./pages/Contact";
+import Disclaimer from "./pages/Disclaimer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/post/:postID" element={<PostPage />} />
               <Route path="/About" element={<About />} />
               <Route path="/Privacy" element={<Privacy />} />
+              <Route path="/Disclaimer" element={<Disclaimer />} />
               <Route path="/Contact" element={<Contact />} />
             </Routes>
           </main>
