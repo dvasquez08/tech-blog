@@ -125,7 +125,7 @@ function Home() {
       {/* The Blog title before all the blog posts are listed */}
       <div className="container mx-auto text-center flex flex-col items-center justify-center mt-36">
         <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-gray-200">
-          Blog:
+          Latest Articles:
         </h2>
         <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-36">
           Stay sharp with our latest posts on tech, tools, and trends.
@@ -138,6 +138,15 @@ function Home() {
         {posts.map((post) => (
           <BlogPostCard key={post.id} post={post} />
         ))}
+      </div>
+
+      {/* Footer text that talks about Tech Things HQ */}
+      <div className="text-lg md:text-xl text-gray-300 leading-relaxed text-center mt-36">
+        <p>
+          Tech Things HQ is dedicated to sharing insights on AI, automation, and
+          modern technology. Follow along as we explore tools, trends, and
+          breakthroughs shaping the digital world.
+        </p>
       </div>
     </>
   );
