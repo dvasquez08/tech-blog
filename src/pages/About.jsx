@@ -10,28 +10,43 @@ function About() {
           Davtek. My background is in software development and automation, and
           over the years I’ve developed a deep passion for exploring how
           technology shapes the way we work, create, and live. This site started
-          as a personal project. A way to document what I was learning and share
-          those insights with a wider audience, and to be a resource for anyone
-          who wants to stay ahead in the tech world.
+          as a personal project. A way to document what I was learning with n8n
+          and coding, and to share those insights with a wider audience.
         </p>
         <p>
-          My goal is to provide clear, insightful, and practical content that
-          helps you stay informed and ahead of the curve. Here, we'll dive into
-          everything from the latest AI breakthroughs and software development
-          trends to handy tools that can make your digital life more efficient.
+          Tech Things HQ started as an experiment and a living project to
+          showcase what’s possible when you combine code with automation. Every
+          article on this site is generated through an n8n workflow that I built
+          from, pulling together APIs, data sources, and logic to automatically
+          create, format, and publish posts.
         </p>
         <p>
-          All articles here are created through a mix of research, and
-          collaboration with my team. Accuracy and clarity are important to me,
-          and I aim to make every piece both informative and engaging.
+          This isn’t a traditional tech blog. It’s a demonstration of real-world
+          automation in action—an example of how low-code tools, modern
+          frameworks, and cloud infrastructure can work together to build
+          something that runs on its own. The goal is to inspire other
+          developers, makers, and businesses to see how far automation can go
+          when paired with creativity and code.
         </p>
         <p>
-          The mission behind Tech Things HQ is simple: to help you navigate
-          technology with clarity, confidence, and curiosity. Whether you’re a
-          tech professional, an entrepreneur, or someone just interested in the
-          future of technology, I hope this site can be a valuable guide.
+          Thanks for visiting and checking out the project. If you’re into
+          automation, AI, or web development, I hope what you see here sparks
+          some ideas for your own builds.
         </p>
-        <p>Thank you for stopping by, and I hope you enjoy the content!</p>
+        <div></div>
+        <div className="mt-12 border-t border-gray-500 pt-8">
+          <p className="font-medium text-gray-100">
+            Checkout how I built this site here:
+          </p>
+          <a
+            href="https://github.com/dvasquez08/tech-blog"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-300 text-xl font-light transition-colors no-underline hover:underline"
+          >
+            Tech Blog Github
+          </a>
+        </div>
       </div>
     </div>
   );
